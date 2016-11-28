@@ -2,8 +2,8 @@
 default_locale: en
 locales: 
   $ref: locales.yml
-name: "Integrations Beta toolchain"
-description: "With this Integrations Beta toolchain, you create a toolchain with the equivalent capabilities as the Integrations Beta. For more information and terms, see the [Bluemix catalog](/catalog/services/continuous-delivery/).\n\nTo get started, click **Create**."
+name: "Integrations sample toolchain"
+description: "Create a sample DevOps toolchain that provides the same capabilities as the Integrations beta for IBM Bluemix DevOps Services. For more information and terms, see the [Bluemix catalog](/catalog/services/continuous-delivery/).\n\nTo get started, click **Create**."
 version: 0.2
 image: data:image/svg+xml;base64,$file(toolchain.svg,base64)
 icon: data:image/svg+xml;base64,$file(icon.svg,base64)
