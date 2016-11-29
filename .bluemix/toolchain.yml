@@ -3,7 +3,7 @@ default_locale: en
 locales: 
   $ref: locales.yml
 name: "Integrations sample toolchain"
-description: "Create a sample DevOps toolchain that provides the same capabilities as the Integrations beta for IBM Bluemix DevOps Services. For more information and terms, see the [Bluemix catalog](/catalog/services/continuous-delivery/).\n\nTo get started, click **Create**."
+description: "With this toolchain, you get the same capabilities as the beta integration capabilities in IBM Bluemix DevOps Services. If you used those capabilities but are moving to toolchains, get started with this toolchain template. This DevOps toolchain is configured with GitHub, Delivery Pipeline, Sauce Labs, and Slack integrations. \n\nTo get started, click **Create**."
 version: 0.2
 image: data:image/svg+xml;base64,$file(toolchain.svg,base64)
 icon: data:image/svg+xml;base64,$file(icon.svg,base64)
