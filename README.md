@@ -1,6 +1,6 @@
 #Integrations sample toolchain
 
-With this sample toolchain, you can get the same capabilities that were provided by the IBM Bluemix DevOps Services Integrations beta. The sample is a DevOps toolchain that can be configured with GitHub, Delivery Pipeline, Sauce Labs, and Slack integrations. 
+With this sample toolchain, you can get the same capabilities as the integrations beta features in IBM Bluemix DevOps Services. The sample is a DevOps toolchain that can be configured with GitHub, Delivery Pipeline, Sauce Labs, and Slack integrations. 
 
 ###To get started, click this button:
 [![Deploy To Bluemix](https://console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/jcayne-ibm/toolchain-demo.git)
