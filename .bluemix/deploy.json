@@ -1,8 +1,17 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MicroServices Deploy Stage",
-    "description": "Feb Demo Microservices Stage Schema",
-    "longDescription": "The Delivery Pipeline for Devops Services allows you to automate your continuous deployment setup.",
+    "messages": {
+        "$i18n": "locales.yml"
+    },
+    "title": {
+        "$ref": "#/messages/deploy.title"
+    },
+    "description": {
+        "$ref": "#/messages/deploy.description"
+    },
+    "longDescription": {
+        "$ref": "#/messages/deploy.longDescription"
+    },
     "type": "object",
     "properties": {
         "dev-region": {
@@ -13,7 +22,7 @@
             "description": "The bluemix org",
             "type": "string"
         },
-       "dev-space": {
+        "dev-space": {
             "description": "The bluemix space",
             "type": "string"
         },
@@ -25,7 +34,7 @@
             "description": "The bluemix org",
             "type": "string"
         },
-       "qa-space": {
+        "qa-space": {
             "description": "The bluemix space",
             "type": "string"
         },
@@ -37,118 +46,166 @@
             "description": "The bluemix org",
             "type": "string"
         },
-       "prod-space": {
+        "prod-space": {
             "description": "The bluemix space",
             "type": "string"
         },
         "orders-app-name": {
-            "description": "orders app name",
-            "type": "string"
+            "description": {
+                "$ref": "#/messages/deploy.appDescription1"
+            },
+            "type": "string",
+            "pattern": "\\S",
+            "maxLength": 63
         },
-       "catalog-app-name": {
-            "description": "catalog app name",
-            "type": "string"
+        "catalog-app-name": {
+            "description": {
+                "$ref": "#/messages/deploy.appDescription2"
+            },
+            "type": "string",
+            "pattern": "\\S",
+            "maxLength": 63
         },
-       "ui-app-name": {
-            "description": "ui app name",
-            "type": "string"
+        "ui-app-name": {
+            "description": {
+                "$ref": "#/messages/deploy.appDescription3"
+            },
+            "type": "string",
+            "pattern": "\\S",
+            "maxLength": 63
         }
     },
-    "required": ["dev-region", "dev-organization", "dev-space", "qa-region", "qa-organization", "qa-space", "prod-region", "prod-organization", "prod-space", "orders-app-name", "catalog-app-name", "ui-app-name"],
+    "required": [
+        "dev-region",
+        "dev-organization",
+        "dev-space",
+        "qa-region",
+        "qa-organization",
+        "qa-space",
+        "prod-region",
+        "prod-organization",
+        "prod-space",
+        "orders-app-name",
+        "catalog-app-name",
+        "ui-app-name"
+    ],
     "form": [
-       {
-          "type": "validator",
-          "url": "/devops/setup/bm-helper/helper.html"
-       },        
-       {
-          "type": "text",
-          "readonly": false,
-          "title": "Orders App Name",
-          "key": "orders-app-name"
+        {
+            "type": "validator",
+            "url": "/devops/setup/bm-helper/helper.html"
         },
         {
-          "type": "text",
-          "readonly": false,
-          "title": "Catalog App Name",
-          "key": "catalog-app-name"
+            "type": "text",
+            "readonly": false,
+            "title": {
+                "$ref": "#/messages/deploy.appName1"
+            },
+            "key": "orders-app-name"
         },
         {
-          "type": "text",
-          "readonly": false,
-          "title": "UI App Name",
-          "key": "ui-app-name"
+            "type": "text",
+            "readonly": false,
+            "title": {
+                "$ref": "#/messages/deploy.appName2"
+            },
+            "key": "catalog-app-name"
+        },
+        {
+            "type": "text",
+            "readonly": false,
+            "title": {
+                "$ref": "#/messages/deploy.appName3"
+            },
+            "key": "ui-app-name"
         },
         {
             "type": "table",
             "columnCount": 4,
-            "widths": ["15%", "28%", "28%", "28%"],
+            "widths": [
+                "15%",
+                "28%",
+                "28%",
+                "28%"
+            ],
             "items": [
                 {
-                  "type": "label",
-                  "title": ""
+                    "type": "label",
+                    "title": ""
                 },
                 {
-                  "type": "label",
-                  "title": "Region"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/region"
+                    }
                 },
                 {
-                  "type": "label",
-                  "title": "Organization"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/organization"
+                    }
                 },
                 {
-                  "type": "label",
-                  "title": "Space"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/space"
+                    }
                 },
                 {
-                  "type": "label",
-                  "title": "Dev Stage"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/devStage"
+                    }
                 },
                 {
-                  "type": "select",
-                  "key": "dev-region"
+                    "type": "select",
+                    "key": "dev-region"
                 },
                 {
-                  "type": "select",
-                  "key": "dev-organization"
+                    "type": "select",
+                    "key": "dev-organization"
                 },
                 {
-                  "type": "select",
-                  "key": "dev-space",
-                  "readonly": false
+                    "type": "select",
+                    "key": "dev-space",
+                    "readonly": false
                 },
                 {
-                  "type": "label",
-                  "title": "Test Stage"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/testStage"
+                    }
                 },
                 {
-                  "type": "select",
-                  "key": "qa-region"
+                    "type": "select",
+                    "key": "qa-region"
                 },
                 {
-                  "type": "select",
-                  "key": "qa-organization"
+                    "type": "select",
+                    "key": "qa-organization"
                 },
                 {
-                  "type": "select",
-                  "key": "qa-space",
-                  "readonly": false
+                    "type": "select",
+                    "key": "qa-space",
+                    "readonly": false
                 },
                 {
-                  "type": "label",
-                  "title": "Prod Stage"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/prodStage"
+                    }
                 },
                 {
-                  "type": "select",
-                  "key": "prod-region"
+                    "type": "select",
+                    "key": "prod-region"
                 },
                 {
-                  "type": "select",
-                  "key": "prod-organization"
+                    "type": "select",
+                    "key": "prod-organization"
                 },
                 {
-                  "type": "select",
-                  "key": "prod-space",
-                  "readonly": false
+                    "type": "select",
+                    "key": "prod-space",
+                    "readonly": false
                 }
             ]
         }
